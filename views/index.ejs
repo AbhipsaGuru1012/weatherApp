@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-		Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
+    <script src="https://kit.fontawesome.com/a0630bb1ae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container justify-content-center">
+        <header>
+            <i class="fas fa-cloud-sun fa-5x"></i>
+        </header>
+        <div class="weather-title">
+            <h1>Weather App</h1>
+            <p>View the current weather for your city</p>
+        </div>
+        <form action="/" method="POST">
+            <input type="text" name="city" placeholder="Enter city name">
+        </form>
+        <div class="weather">
+            <% if(temp!==null){ %>
+                <h2 class="temp"><%=temp%>&#x2103;</h2>
+            <% } %>
+            <div class="description">
+                <% if(icon!==null){ %>
+                    <img class="icon" src="http://openweathermap.org/img/w/<%=icon%>.png">
+                <% } %>
+                <% if(desc!=null){%>
+                    <h3 class="desc"><%=desc%></h3>
+                <% } %>
+            </div>
+            <% if(city!==null){ %>
+                <p><%=city%></p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
